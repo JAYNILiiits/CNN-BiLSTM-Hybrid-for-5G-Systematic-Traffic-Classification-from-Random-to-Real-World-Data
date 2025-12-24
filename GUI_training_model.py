@@ -19,9 +19,9 @@ import json, warnings
 warnings.filterwarnings('ignore')
 
 
-# ============================================================================
-# MAXIMUM CPU OPTIMIZATION
-# ============================================================================
+
+#MAXIMUM CPU OPTIMIZATION
+
 torch.set_num_threads(os.cpu_count())
 torch.set_num_interop_threads(os.cpu_count())
 
@@ -65,9 +65,8 @@ print(f"✓ CPU Threads: {torch.get_num_threads()}")
 print("="*80 + "\n")
 
 
-# ============================================================================
 # ATTENTION LAYER CLASS
-# ============================================================================
+
 class AttentionLayer(nn.Module):
     def __init__(self, hidden_size):
         super().__init__()
@@ -83,10 +82,8 @@ class AttentionLayer(nn.Module):
         weighted = torch.sum(attention_weights * lstm_output, dim=1)
         return weighted
 
-
-# ============================================================================
 # FOCAL LOSS CLASS
-# ============================================================================
+
 class FocalLoss(nn.Module):
     def __init__(self, alpha=None, gamma=2.0, label_smoothing=0.0):
         super().__init__()
@@ -103,9 +100,7 @@ class FocalLoss(nn.Module):
         return focal_loss.mean()
 
 
-# ============================================================================
-# ULTRA-OPTIMIZED ARCHITECTURE
-# ============================================================================
+
 class UltraOptimizedPacketClassifier(nn.Module):
     def __init__(self, n_classes=6):
         super(UltraOptimizedPacketClassifier, self).__init__()
@@ -218,9 +213,7 @@ class UltraOptimizedPacketClassifier(nn.Module):
         return self.classifier(context)
 
 
-# ============================================================================
-# HELPER FUNCTIONS
-# ============================================================================
+
 def update_progress(phase, overall_progress, phase_progress, status, eta="N/A", duration="0m"):
     model_state.update({'progress': overall_progress, 'status': status, 'current_phase': phase, 'phase_progress': phase_progress, 'eta': eta, 'duration': duration})
 
@@ -634,9 +627,9 @@ def train_model_background():
 
 
 
-# ============================================================================
+
 # FLASK ROUTES
-# ============================================================================
+
 HTML = """<!DOCTYPE html>
 <html>
 <head>
